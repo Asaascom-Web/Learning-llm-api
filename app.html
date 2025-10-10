@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat - Educational Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Particle Background Canvas -->
+    <canvas id="particleCanvas"></canvas>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <a href="index.html" class="back-btn" title="Back to Home">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                    </a>
+                    <h1 class="logo">
+                        <span class="glow-text">AI Chat</span>
+                        <span class="beta-badge">Educational</span>
+                    </h1>
+                </div>
+                <button class="settings-btn" id="settingsBtn" title="Settings">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M12 1v6m0 6v6m9-9h-6m-6 0H3"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Settings Panel -->
+        <div class="settings-panel" id="settingsPanel">
+            <div class="settings-content">
+                <h2>API Configuration</h2>
+                <div class="form-group">
+                    <label for="apiProvider">API Provider</label>
+                    <select id="apiProvider" class="input-field">
+                        <option value="groq">Groq (Recommended)</option>
+                        <option value="huggingface">Hugging Face</option>
+                        <option value="openrouter">OpenRouter</option>
+                        <option value="custom">Custom Endpoint</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="apiKey">API Key</label>
+                    <input 
+                        type="password" 
+                        id="apiKey" 
+                        class="input-field" 
+                        placeholder="Enter your API key"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="modelSelect">Model</label>
+                    <select id="modelSelect" class="input-field">
+                        <option value="llama-3.1-8b-instant">Llama 3.1 8B (Fast)</option>
+                        <option value="llama-3.1-70b-versatile">Llama 3.1 70B (Powerful)</option>
+                        <option value="mixtral-8x7b-32768">Mixtral 8x7B</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="systemPrompt">System Prompt</label>
+                    <textarea 
+                        id="systemPrompt" 
+                        class="input-field" 
+                        rows="3"
+                        placeholder="You are a helpful assistant..."
+                    >You are a helpful AI assistant. Provide clear, concise, and accurate responses.</textarea>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-primary" id="saveSettings">Save Settings</button>
+                    <button class="btn btn-secondary" id="closeSettings">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Container -->
+        <main class="chat-container">
+            <!-- Welcome Message -->
+            <div class="welcome-message" id="welcomeMessage">
+                <div class="welcome-icon">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                </div>
+                <h2>Welcome to AI Chat</h2>
+                <p>Start a conversation with an AI assistant</p>
+                <div class="quick-tips">
+                    <h3>Quick Tips:</h3>
+                    <ul>
+                        <li>Configure your API key in settings (⚙️)</li>
+                        <li>Choose from multiple free LLM providers</li>
+                        <li>Use Shift + Enter for new lines</li>
+                        <li>Type your message and press Enter</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Messages Area -->
+            <div class="messages" id="messagesContainer">
+                <!-- Messages will be dynamically added here -->
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="messageInput" 
+                        class="message-input" 
+                        placeholder="Type your message... (Shift + Enter for new line)"
+                        rows="1"
+                    ></textarea>
+                    <button class="send-btn" id="sendBtn" title="Send message">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+                <div class="input-footer">
+                    <span class="status-indicator" id="statusIndicator">
+                        <span class="status-dot"></span>
+                        Not configured
+                    </span>
+                    <button class="clear-btn" id="clearBtn">Clear Chat</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

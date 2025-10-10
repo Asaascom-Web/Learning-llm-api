@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat - Learn How to Build AI Applications</title>
+    <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+    <!-- Particle Background Canvas -->
+    <canvas id="particleCanvas"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="glow-text">Maset AI Chat</span>
+                <span class="beta-badge">Educational</span>
+            </div>
+            <div class="nav-links">
+                <a href="app.html" class="btn btn-primary">Launch App</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        LLM APIs Integration
+                        <span class="gradient-text">in ChatBot</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Build your first AI chat application using free LLM APIs. 
+                        Learn modern web development while creating something amazing in Malaysia.
+                    </p>
+                    <div class="hero-features">
+                        <div class="feature-badge">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>100% Free APIs</span>
+                        </div>
+                        <div class="feature-badge">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Currently No Login Required</span>
+                        </div>
+                        <div class="feature-badge">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Beginner Friendly</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="app.html" class="btn btn-hero btn-primary">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                            Start Building Now
+                        </a>
+                        <a href="#how-it-works" class="btn btn-hero btn-outline">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            Learn How It Works
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="chat-preview">
+                        <div class="chat-header">
+                            <div class="chat-avatar">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <div class="chat-info">
+                                <h3>AI Assistant</h3>
+                                <span class="status">Online</span>
+                            </div>
+                        </div>
+                        <div class="chat-messages">
+                            <div class="message user-message">
+                                <div class="message-content">
+                                    <p>How do I create a JavaScript function?</p>
+                                </div>
+                            </div>
+                            <div class="message ai-message">
+                                <div class="message-avatar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                    </svg>
+                                </div>
+                                <div class="message-content">
+                                    <p>Here's how to create a JavaScript function:</p>
+                                    <div class="code-block">
+                                        <code>function greetUser(name) {<br>&nbsp;&nbsp;return `Hello, ${name}!`;<br>}</code>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="typing-indicator">
+                                <div class="typing-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" placeholder="Ask me anything..." disabled>
+                            <button class="send-btn" disabled>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Free APIs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">⚡</div>
+                    <div class="stat-label">Fast Setup</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">🎓</div>
+                    <div class="stat-label">Educational</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">🚀</div>
+                    <div class="stat-label">Production Ready</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section how-it-works-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>
+                    <span>How It Works</span>
+                </div>
+                <p class="section-description">
+                    Follow the journey of a single message through our AI chat system in just 4 simple steps
+                </p>
+            </div>
+
+            <div class="workflow-container">
+                <div class="workflow">
+                    <div class="workflow-step">
+                        <div class="step-card">
+                            <div class="step-header">
+                                <div class="step-number">1</div>
+                                <div class="step-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="step-content">
+                                <h3>User Input</h3>
+                                <p>User types a message in the chat interface. The message is captured by the JavaScript event listener.</p>
+                                <div class="code-snippet">
+                                    <div class="code-header">Event Listener</div>
+                                    <code>messageInput.addEventListener('keydown')</code>
+                                </div>
+                                <div class="step-highlight">
+                                    <span class="highlight-icon">💡</span>
+                                    <span>Learn: DOM Event Handling</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-connector">
+                        <div class="connector-line"></div>
+                        <div class="connector-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="13 17 18 12 13 7"></polyline>
+                                <polyline points="6 17 11 12 6 7"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-card">
+                            <div class="step-header">
+                                <div class="step-number">2</div>
+                                <div class="step-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="16 18 22 12 16 6"></polyline>
+                                        <polyline points="8 6 2 12 8 18"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="step-content">
+                                <h3>API Request</h3>
+                                <p>Your message is formatted into a JSON payload and sent to the LLM API endpoint using the Fetch API.</p>
+                                <div class="code-snippet">
+                                    <div class="code-header">HTTP Request</div>
+                                    <code>fetch(endpoint, { method: 'POST', ... })</code>
+                                </div>
+                                <div class="step-highlight">
+                                    <span class="highlight-icon">🌐</span>
+                                    <span>Learn: HTTP & JSON</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-connector">
+                        <div class="connector-line"></div>
+                        <div class="connector-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="13 17 18 12 13 7"></polyline>
+                                <polyline points="6 17 11 12 6 7"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-card">
+                            <div class="step-header">
+                                <div class="step-number">3</div>
+                                <div class="step-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M12 6v6l4 2"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="step-content">
+                                <h3>LLM Processing</h3>
+                                <p>The AI model (like Llama 3.1 or Mixtral) processes your message and generates an intelligent response.</p>
+                                <div class="code-snippet">
+                                    <div class="code-header">Model Config</div>
+                                    <code>model: "llama-3.1-8b-instant"</code>
+                                </div>
+                                <div class="step-highlight">
+                                    <span class="highlight-icon">🤖</span>
+                                    <span>Learn: AI Models</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-connector">
+                        <div class="connector-line"></div>
+                        <div class="connector-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="13 17 18 12 13 7"></polyline>
+                                <polyline points="6 17 11 12 6 7"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-card">
+                            <div class="step-header">
+                                <div class="step-number">4</div>
+                                <div class="step-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="step-content">
+                                <h3>Display Response</h3>
+                                <p>The AI's response is extracted from the API response and displayed in the chat interface with formatting.</p>
+                                <div class="code-snippet">
+                                    <div class="code-header">DOM Update</div>
+                                    <code>addMessage('assistant', response)</code>
+                                </div>
+                                <div class="step-highlight">
+                                    <span class="highlight-icon">✨</span>
+                                    <span>Learn: Dynamic UI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- API Setup Section -->
+    <section id="api-setup" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">API Setup Guide</h2>
+                <p class="section-description">
+                    Choose from multiple free LLM APIs - no credit card required!
+                </p>
+            </div>
+
+            <div class="api-providers">
+                <!-- Groq -->
+                <div class="api-card recommended">
+                    <div class="card-badge">⭐ Currently Using</div>
+                    <div class="api-header">
+                        <div class="api-icon groq-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 6v6l4 2"></path>
+                            </svg>
+                        </div>
+                        <div class="api-info">
+                            <h3>Groq</h3>
+                            <p class="api-tagline">Lightning-fast inference</p>
+                        </div>
+                    </div>
+                    <div class="api-features">
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Fastest responses (under 1 second)</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>No credit card required</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Generous free tier (14,400 req/day)</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Multiple models (Llama, Mixtral, Gemma)</span>
+                        </div>
+                    </div>
+                    <div class="api-setup-steps">
+                        <h4>Setup Steps:</h4>
+                        <ol>
+                            <li>Visit <a href="https://console.groq.com" target="_blank">console.groq.com</a></li>
+                            <li>Sign up with Google/GitHub (takes 30 seconds)</li>
+                            <li>Click "API Keys" in the sidebar</li>
+                            <li>Click "Create API Key"</li>
+                            <li>Copy your key (starts with <code>gsk_</code>)</li>
+                            <li>Paste it in the app settings</li>
+                        </ol>
+                    </div>
+                    <a href="https://console.groq.com" target="_blank" class="btn btn-primary">
+                        Get Groq API Key
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- OpenRouter -->
+                <div class="api-card">
+                    <div class="api-header">
+                        <div class="api-icon openrouter-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path d="M12 1v6m0 6v6m9-9h-6m-6 0H3"></path>
+                            </svg>
+                        </div>
+                        <div class="api-info">
+                            <h3>OpenRouter</h3>
+                            <p class="api-tagline">Access to many models</p>
+                        </div>
+                    </div>
+                    <div class="api-features">
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Multiple free models available</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Easy model switching</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>OpenAI-compatible API</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Great for experimentation</span>
+                        </div>
+                    </div>
+                    <div class="api-setup-steps">
+                        <h4>Setup Steps:</h4>
+                        <ol>
+                            <li>Visit <a href="https://openrouter.ai" target="_blank">openrouter.ai</a></li>
+                            <li>Create a free account</li>
+                            <li>Navigate to "Keys" section</li>
+                            <li>Generate a new API key</li>
+                            <li>Copy and use in the app</li>
+                        </ol>
+                    </div>
+                    <a href="https://openrouter.ai" target="_blank" class="btn btn-secondary">
+                        Get OpenRouter Key
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Hugging Face -->
+                <div class="api-card">
+                    <div class="api-header">
+                        <div class="api-icon huggingface-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div class="api-info">
+                            <h3>Hugging Face</h3>
+                            <p class="api-tagline">Thousands of models</p>
+                        </div>
+                    </div>
+                    <div class="api-features">
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Largest model library</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Free inference API</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Great for learning</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Research-friendly</span>
+                        </div>
+                    </div>
+                    <div class="api-setup-steps">
+                        <h4>Setup Steps:</h4>
+                        <ol>
+                            <li>Visit <a href="https://huggingface.co" target="_blank">huggingface.co</a></li>
+                            <li>Create a free account</li>
+                            <li>Go to Settings → Access Tokens</li>
+                            <li>Create a new token (Read permissions)</li>
+                            <li>Copy and use in the app</li>
+                        </ol>
+                    </div>
+                    <a href="https://huggingface.co" target="_blank" class="btn btn-secondary">
+                        Get HF Token
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- API Comparison Table -->
+            <div class="comparison-table">
+                <h3>Quick Comparison</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Groq</th>
+                            <th>OpenRouter</th>
+                            <th>Hugging Face</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Response Speed</td>
+                            <td class="best">⚡ Fastest</td>
+                            <td>Fast</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>Free Tier</td>
+                            <td class="best">14,400 req/day</td>
+                            <td>Limited free models</td>
+                            <td>Rate limited</td>
+                        </tr>
+                        <tr>
+                            <td>Setup Difficulty</td>
+                            <td class="best">⭐ Easiest</td>
+                            <td>Easy</td>
+                            <td>Easy</td>
+                        </tr>
+                        <tr>
+                            <td>Model Selection</td>
+                            <td>5+ models</td>
+                            <td class="best">100+ models</td>
+                            <td class="best">1000+ models</td>
+                        </tr>
+                        <tr>
+                            <td>Credit Card Required</td>
+                            <td class="best">❌ No</td>
+                            <td class="best">❌ No</td>
+                            <td class="best">❌ No</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What You'll Learn</h2>
+                <p class="section-description">
+                    Master essential web development and AI integration concepts
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <h3>API Integration</h3>
+                    <p>Learn how to make HTTP requests, handle responses, and integrate external APIs into your applications.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Async JavaScript</h3>
+                    <p>Master asynchronous programming with Promises, async/await, and the Fetch API for modern web development.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>DOM Manipulation</h3>
+                    <p>Dynamically create and update page elements, handle user interactions, and build responsive UIs.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                    <h3>Error Handling</h3>
+                    <p>Implement robust error handling, user feedback, and graceful failure recovery in your applications.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3>Canvas API</h3>
+                    <p>Create beautiful animations and interactive graphics using HTML5 Canvas and JavaScript animation loops.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <h3>API Security</h3>
+                    <p>Understand API key management, security best practices, and protecting sensitive credentials.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                    </div>
+                    <h3>Data Persistence</h3>
+                    <p>Use localStorage and browser storage APIs to save user preferences and application state.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 7l-7 5 7 5V7z"></path>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                    </div>
+                    <h3>Modern CSS</h3>
+                    <p>Build beautiful UIs with modern CSS techniques, animations, custom properties, and responsive design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Project Introduction -->
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="logo-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </div>
+                            <span class="brand-name">Maset AI Chat</span>
+                        </div>
+                        <p class="brand-tagline">AI INTEGRATION PLATFORM</p>
+                    </div>
+                    <p class="footer-description">
+                        Empowering students and developers in Malaysia with hands-on AI chat applications, 
+                        modern web technologies, and real-world skills to succeed in the tech industry.
+                    </p>
+                    
+                    <!-- Learn Section -->
+                    <div class="tech-section">
+                        <h6>LEARN:</h6>
+                        <div class="tech-icons">
+                            <div class="tech-icon">
+                                <span class="tech-label">HTML5</span>
+                            </div>
+                            <div class="tech-icon">
+                                <span class="tech-label">CSS3</span>
+                            </div>
+                            <div class="tech-icon">
+                                <span class="tech-label">JS</span>
+                            </div>
+                            <div class="tech-icon">
+                                <span class="tech-label">API</span>
+                            </div>
+                            <div class="tech-icon">
+                                <span class="tech-label">AI</span>
+                            </div>
+                            <div class="tech-icon">
+                                <span class="tech-label">LLM</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Instructor Section -->
+                    <div class="instructor-section">
+                        <h6>Instructor:</h6>
+                        <div class="instructor-card">
+                            <div class="instructor-avatar">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                    <path d="M12 3v2M12 17v2M8 12h2M14 12h2"></path>
+                                </svg>
+                            </div>
+                            <div class="instructor-info">
+                                <h5>Mohammed Asif</h5>
+                                <p>Curious developer who loves experimenting with tech and bringing creative ideas to life..</p>
+                            </div>
+                        </div>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon" title="GitHub">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon" title="LinkedIn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon" title="Website">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Free API -->
+                <div class="footer-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            </svg>
+                        </div>
+                        <h4>Free API</h4>
+                    </div>
+                    <ul class="module-list">
+                        <li><span class="chevron">></span> Groq API - Lightning Fast Inference</li>
+                        <li><span class="chevron">></span> Hugging Face - Open Source Models</li>
+                        <li><span class="chevron">></span> OpenAI Free Tier - GPT Models</li>
+                        <li><span class="chevron">></span> Cohere - Free Tier Available</li>
+                        <li><span class="chevron">></span> Anthropic - Claude Free Tier</li>
+                        <li><span class="chevron">></span> Local Models - Ollama & LM Studio</li>
+                    </ul>
+                </div>
+
+                <!-- Paid API -->
+                <div class="footer-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 1v6l3 3-3 3v6"></path>
+                                <path d="M21 12h-6l-3 3 3 3H3"></path>
+                            </svg>
+                        </div>
+                        <h4>Paid API</h4>
+                    </div>
+                    <ul class="module-list">
+                        <li><span class="chevron">></span> OpenAI GPT-4 - Premium Models</li>
+                        <li><span class="chevron">></span> Anthropic Claude - Advanced Reasoning</li>
+                        <li><span class="chevron">></span> Google Gemini Pro - Multimodal AI</li>
+                        <li><span class="chevron">></span> Azure OpenAI - Enterprise Solutions</li>
+                        <li><span class="chevron">></span> AWS Bedrock - Managed AI Services</li>
+                        <li><span class="chevron">></span> Custom Model Training</li>
+                        <li><span class="chevron">></span> High-Volume API Access</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI Chat Educational Project. Built for learning purposes. Malaysia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="particles.js"></script>
+</body>
+</html>
+
