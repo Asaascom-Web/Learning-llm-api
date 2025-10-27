@@ -14,7 +14,7 @@ class AIChatApp {
         // Configuration stored in localStorage
         // NOTE: For production, NEVER hardcode API keys! Use environment variables or secure storage.
         this.config = {
-            apiKey: localStorage.getItem('apiKey') || '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',
+            apiKey: localStorage.getItem('apiKey') || '',
             apiProvider: localStorage.getItem('apiProvider') || 'groq',
             model: localStorage.getItem('model') || 'llama-3.1-8b-instant',
             systemPrompt: localStorage.getItem('systemPrompt') || 'You are a helpful AI assistant. Provide clear, concise, and accurate responses.'
